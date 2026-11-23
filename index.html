@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Apostolos Giannoulidis, failure prediction research</title>
+<title>Apostolos Giannoulidis | Research</title>
 <meta name="description" content="Postdoctoral researcher at ETIS (UMR8051, CYU, ENSEA, CNRS). Machine learning for time series, predictive maintenance, explainable AI and survival analysis.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polyline points='2,22 9,20 13,24 18,8 22,18 30,16' fill='none' stroke='%232A6FDB' stroke-width='3'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polyline points='2,22 9,20 13,24 18,8 22,18 30,16' fill='none' stroke='%230E7C7B' stroke-width='3'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -20,6 +20,7 @@
     <a href="#software">Software</a>
     <a href="#publications">Publications</a>
     <a href="#about">About</a>
+    <a href="ApostolosGiannoulidis_CV_en.pdf">CV</a>
   </nav>
 </header>
 
@@ -28,10 +29,16 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <h1>Apostolos Giannoulidis</h1>
-    <p class="role">Postdoctoral researcher at ETIS (UMR8051, CY Cergy Paris Université, ENSEA, CNRS), France</p>
-    <p class="pitch">I build machine learning methods that predict equipment failures from time-series data, explain their alarms, and estimate when an asset will fail.  Working at Data&AI lab, under advisory of Prof. Vassilis Christophides and Prof. Aikaterini Tzompanaki.</p>
+    <div class="id">
+      <img class="avatar" src="assets/img/apostolos-giannoulidis.jpg" alt="Photo of Apostolos Giannoulidis" width="112" height="112">
+      <div>
+        <h1>Apostolos Giannoulidis</h1>
+        <p class="role">Postdoctoral researcher at ETIS (UMR8051, CY Cergy Paris Université, ENSEA, CNRS), France</p>
+      </div>
+    </div>
+    <p class="pitch">I develop machine learning methods that predict equipment failures from time-series data, explain the raised alarms and estimate when an asset will fail. I work in the Data&amp;AI team, advised by Prof. Vassilis Christophides and Prof. Aikaterini Tzompanaki.</p>
     <ul class="links">
+      <li><a href="ApostolosGiannoulidis_CV_en.pdf">CV (PDF)</a></li>
       <li><a href="https://scholar.google.com/citations?user=IrrqOIAAAAAJ&hl">Google Scholar</a></li>
       <li><a href="https://github.com/agiannoul">GitHub</a></li>
       <li><a href="https://www.linkedin.com/in/apostolosgiannoulidis/">LinkedIn</a></li>
@@ -53,20 +60,23 @@
 <!-- RESEARCH OVERVIEW -->
 <section id="research" class="block">
   <h2>Research</h2>
-  <p class="lede">My work follows the path from raw sensor data to a maintenance decision. Real cases from Philips factory, Framatome hydrogen fuel stations and connected vehicle fleets motivate each step.</p>
+  <p class="lede">My work covers the path from raw sensor data to a maintenance decision. Each step is motivated by real use cases, such as a Philips factory, Framatome hydrogen fuel stations and connected vehicle fleets.</p>
   <ol class="pipeline">
-    <li><a href="#axis1"><b>Detect</b><span>Unsupervised learning on non-stationary streams</span></a></li>
-    <li><a href="#axis2"><b>Explain</b><span>Context- and causality-aware anomaly detection</span></a></li>
-    <li><a href="#axis3"><b>Predict when</b><span>Explainable time-to-event prediction</span></a></li>
+    <li><a href="#axis1"><span class="n">01</span><b>Detect</b><span>Unsupervised learning on non-stationary streams</span></a></li>
+    <li><a href="#axis2"><span class="n">02</span><b>Explain</b><span>Context- and causality-aware anomaly detection</span></a></li>
+    <li><a href="#axis3"><span class="n">03</span><b>Predict when</b><span>Explainable time-to-event prediction</span></a></li>
   </ol>
 </section>
 
 <!-- AXIS 1 -->
 <section id="axis1" class="axis" data-axis="1">
   <header class="axis-head">
-    <p class="axis-step">Step 1</p>
-    <h2>Detect early signs in data that keeps changing</h2>
-    <p class="challenge">Machines run under changing settings and have few labelled failures. How can detection, thresholds and clustering stay reliable without labels or manual tuning?</p>
+    <span class="axis-num" aria-hidden="true">01</span>
+    <div>
+      <p class="axis-step">Detect</p>
+      <h2>Detect early signs in data that keeps changing</h2>
+      <p class="challenge">Machines run under changing settings and have few labelled failures. How can detection, thresholds and clustering stay reliable without labels or manual tuning?</p>
+    </div>
   </header>
 
   
@@ -75,7 +85,7 @@
     <article class="work">
       <button class="thumb" data-gallery="burst" type="button"><img src="assets/img/burst-overview.jpg" alt="BURST overview: AutoKC estimates clusters per batch, and cluster meta-data is merged across batches" loading="lazy"></button>
       <div class="work-body">
-        <h3>BURST: clustering for evolving streams</h3>
+        <h3>BURST: Rendering Clustering Techniques Suitable for Evolving Streams</h3>
         <p class="venue"><span>PVLDB 2025</span><span class="badge">CORE A*</span></p>
         <p>Lets partition-based clustering (k-Means, k-Shape, k-Medoids) run on streaming time series. AutoKC estimates the number of clusters automatically.</p>
         <p class="actions"><a href="https://doi.org/10.14778/3749646.3749675">Paper</a><a href="https://github.com/agiannoul/BURST-Clustering">Code</a><button class="linkish" data-gallery="burst" type="button">Figures (3)</button></p>
@@ -85,7 +95,7 @@
     <article class="work">
       <button class="thumb" data-gallery="press" type="button"><img src="assets/img/early-signs.jpg" alt="Predicting failures with anomaly detection: anomalous data as early warnings" loading="lazy"></button>
       <div class="work-body">
-        <h3>Unsupervised PdM for a cold-forming press</h3>
+        <h3>Engineering and evaluating an unsupervised predictive maintenance solution: a cold-forming press case-study</h3>
         <p class="venue"><span>Journal of Intelligent Manufacturing 2024</span><span class="badge">IF 7.4</span></p>
         <p>Similarity-, forecasting- and deep-learning-based detectors on a real Philips press, and how to evaluate them.</p>
         <p class="actions"><a href="https://doi.org/10.1007/s10845-024-02352-z">Paper</a><button class="linkish" data-gallery="press" type="button">Figures (3)</button></p>
@@ -95,9 +105,9 @@
     <article class="work">
       <button class="thumb" data-gallery="flavors" type="button"><img src="assets/img/flavors.jpg" alt="Implementation flavors: historical, online, sliding, unsupervised, classification, RUL and survival analysis" loading="lazy"></button>
       <div class="work-body">
-        <h3>The power of anomaly detection in PdM</h3>
-        <p class="venue"><span>SIGMOD (PACMMOD) 2026, Experiments &amp; Analysis</span><span class="badge">CORE A*</span></p>
-        <p>An extensive experimental study of time-series anomaly detection for PdM, in one common evaluation framework.</p>
+        <h3>The Power of Anomaly Detection in Predictive Maintenance [Experiments &amp; Analysis]</h3>
+        <p class="venue"><span>SIGMOD (PACMMOD) 2026</span><span class="badge">CORE A*</span></p>
+        <p>An extensive experimental study of time-series anomaly detection for predictive maintenance, using one common evaluation framework.</p>
         <p class="actions"><a href="https://doi.org/10.1145/3802119">Paper</a><a href="#software">Related library: PdM-Labs</a><button class="linkish" data-gallery="flavors" type="button">Figures (1)</button></p>
       </div>
     </article>
@@ -106,7 +116,7 @@
     <article class="work">
       <button class="thumb" data-gallery="fleet" type="button"><img src="assets/img/fleet-context.jpg" alt="Time context and cluster context in a homogeneous fleet" loading="lazy"></button>
       <div class="work-body">
-        <h3>Context-aware PdM for fleet management</h3>
+        <h3>A context-aware unsupervised predictive maintenance solution for fleet management</h3>
         <p class="venue"><span>Journal of Intelligent Information Systems 2023</span><span class="badge">IF 3.5</span></p>
         <p>Models the context of each fleet member, with a 2-stage proximity method and context-aware transformers.</p>
         <p class="actions"><a href="https://doi.org/10.1007/s10844-022-00744-2">Paper</a><a href="https://github.com/agiannoul/UnsupervisedFleetManagment">Code</a><button class="linkish" data-gallery="fleet" type="button">Figures (1)</button></p>
@@ -116,7 +126,7 @@
     <article class="work">
       <button class="thumb" data-gallery="navarchos" type="button"><img src="assets/img/nav-1.png" alt="Raw signals, aggregation, correlation and delta feature spaces" loading="lazy"></button>
       <div class="work-body">
-        <h3>Vehicle PdM with partial information</h3>
+        <h3>Exploring unsupervised anomaly detection for vehicle predictive maintenance with partial information</h3>
         <p class="venue"><span>EDBT 2024, Industrial &amp; Applications</span><span class="badge">CORE A</span></p>
         <p>Detects behaviour changes from differences in signal correlations, to cope with driving style and weather.</p>
         <p class="actions"><a href="https://openproceedings.org/2024/conf/edbt/paper-200.pdf">Paper</a><a href="https://github.com/agiannoul/NavarchosPdM">Code</a><a href="https://doi.org/10.1007/978-3-031-61000-4_13">Demo paper (CAiSE 2024)</a><button class="linkish" data-gallery="navarchos" type="button">Figures (1)</button></p>
@@ -126,7 +136,7 @@
     <article class="work">
       <button class="thumb" data-gallery="dkr" type="button"><img src="assets/img/dkr.jpg" alt="Choosing K and R per window with an optimization function" loading="lazy"></button>
       <div class="work-body">
-        <h3>Parameter-free streaming outlier detection</h3>
+        <h3>Parameter-free Streaming Distance-based Outlier Detection</h3>
         <p class="venue"><span>ICDE Workshops 2024</span></p>
         <p>Selects the neighbour count K and radius R in every window with an optimization function, instead of fixing them by hand.</p>
         <p class="actions"><a href="https://doi.org/10.1109/ICDEW61823.2024.00019">Paper</a><a href="https://github.com/agiannoul/ADBOD">Code</a><button class="linkish" data-gallery="dkr" type="button">Figures (2)</button></p>
@@ -136,7 +146,7 @@
     <article class="work">
       <button class="thumb" data-gallery="thr" type="button"><img src="assets/img/thresholding.jpg" alt="Constant, self-tuning, objective-based and moving 2T thresholds" loading="lazy"></button>
       <div class="work-body">
-        <h3>Thresholding techniques in a real PdM scenario</h3>
+        <h3>Investigating thresholding techniques in a real predictive maintenance scenario</h3>
         <p class="venue"><span>SIGKDD Explorations 2022</span></p>
         <p>Compares four thresholding techniques, two of them dynamic, on a Philips cold-forming press.</p>
         <p class="actions"><a href="https://doi.org/10.1145/3575637.3575651">Paper</a><a href="https://github.com/agiannoul/ADThresholding">Code</a><button class="linkish" data-gallery="thr" type="button">Figures (1)</button></p>
@@ -145,7 +155,7 @@
 
       <div class="demo" id="demoThreshold">
     <div class="demo-head">
-      <h3>Try it: why a fixed threshold breaks under drift</h3>
+      <h3><span class="tag">Interactive</span>Why a fixed threshold fails under drift</h3>
       <p class="note">Synthetic data, for illustration.</p>
     </div>
     <svg class="chart" viewBox="0 0 800 240" aria-label="Anomaly score with a threshold"></svg>
@@ -159,7 +169,7 @@
       <label class="slider hidden" data-for="dyn">Window length <input type="range" id="thrWin" min="20" max="120" step="5" value="60"><output id="thrWinOut"></output></label>
     </div>
     <p class="readout" id="thrReadout" aria-live="polite"></p>
-    <p class="explain">The score shifts when the machine changes setting, not because it is failing. Moving 2T recomputes the threshold from recent data as mean + 2σ, removes the outliers, and repeats.</p>
+    <p class="explain">The score shifts because the machine changes setting, even though nothing is failing. Moving 2T recomputes the threshold from recent data as mean + 2σ, removes the outliers, and repeats.</p>
   </div>
 
   </div>
@@ -168,14 +178,17 @@
 <!-- AXIS 2 -->
 <section id="axis2" class="axis" data-axis="2">
   <header class="axis-head">
-    <p class="axis-step">Step 2</p>
-    <h2>Explain the alarm with its context</h2>
-    <p class="challenge">Many alarms reflect a change in operating context rather than a fault. How to separate the two, and explain detections through causal relations between context and sensor data?</p>
+    <span class="axis-num" aria-hidden="true">02</span>
+    <div>
+      <p class="axis-step">Explain</p>
+      <h2>Explain the alarm with its context</h2>
+      <p class="challenge">Many alarms reflect a change in operating context rather than a fault. How can we separate the two, and explain detections through causal relations between context and sensor data?</p>
+    </div>
   </header>
 
   <div class="demo" id="demoContext">
     <div class="demo-head">
-      <h3>Try it: prune alarms that the context explains</h3>
+      <h3><span class="tag">Interactive</span>Pruning alarms that the context explains</h3>
       <p class="note">Synthetic data, for illustration.</p>
     </div>
     <svg class="chart" viewBox="0 0 800 270" aria-label="Anomaly score, alarms and context events"></svg>
@@ -190,9 +203,9 @@
     <article class="work">
       <button class="thumb" data-gallery="tecad" type="button"><img src="assets/img/tecad.jpg" alt="TECAD on New York taxi demand: a context generator combines anomaly scores with holidays and temperature, and causal discovery explains the anomalies" loading="lazy"></button>
       <div class="work-body">
-        <h3>TECAD: explainable contextualized anomaly detection</h3>
+        <h3>Explainable contextualized anomaly detection for heterogeneous time series</h3>
         <p class="venue"><span>Journal of Intelligent Information Systems 2026</span><span class="badge">IF 3.5</span></p>
-        <p>Builds the context of any anomaly detector from heterogeneous sources and causal discovery, for explanations and better decisions.</p>
+        <p>TECAD builds the context of any anomaly detector from heterogeneous sources and causal discovery, for explanations and better decisions.</p>
         <p class="actions"><a href="https://doi.org/10.1007/s10844-026-01087-y">Paper</a><a href="https://github.com/agiannoul/TECAD">Code</a><button class="linkish" data-gallery="tecad" type="button">Figures (2)</button></p>
       </div>
     </article>
@@ -200,7 +213,7 @@
     <article class="work">
       <button class="thumb" data-gallery="feedback" type="button"><img src="assets/img/tecad-pruning.jpg" alt="Pruning potential false alarms using context and feedback" loading="lazy"></button>
       <div class="work-body">
-        <h3>Feedback- and causality-enriched multimodal context</h3>
+        <h3>Leveraging Feedback and Causality-Enriched Multimodal Context for Predictive Maintenance</h3>
         <p class="venue"><span>IEEE Access 2025</span><span class="badge">IF 4.2</span></p>
         <p>Fuses discrete and continuous streams with feedback on past false alarms, to prune similar false alarms before they are raised.</p>
         <p class="actions"><a href="https://doi.org/10.1109/ACCESS.2025.3592775">Paper</a><a href="https://github.com/agiannoul/PdMContextFeedback">Code</a><button class="linkish" data-gallery="feedback" type="button">Figures (1)</button></p>
@@ -214,15 +227,18 @@
 <!-- AXIS 3 -->
 <section id="axis3" class="axis" data-axis="3">
   <header class="axis-head">
-    <p class="axis-step">Step 3</p>
-    <h2>Predict when an asset will fail, and what would delay it</h2>
-    <p class="challenge">Failure data are often censored: a machine is replaced before it breaks. How to compare Remaining Useful Life (RUL) regression with survival models, and find feasible counterfactuals?</p>
+    <span class="axis-num" aria-hidden="true">03</span>
+    <div>
+      <p class="axis-step">Predict when</p>
+      <h2>Predict when an asset will fail, and what would delay it</h2>
+      <p class="challenge">Failure data are often censored, since machines are frequently replaced before they break. How can we compare Remaining Useful Life (RUL) regression with survival models, and find feasible counterfactuals?</p>
+    </div>
   </header>
 
   <div class="demo" id="demoTTE">
     <div class="demo-head">
-      <h3>Try it: from a point prediction to a survival curve, and back</h3>
-      <p class="note">The translation used by TITEUF, on toy values.</p>
+      <h3><span class="tag">Interactive</span>From a point prediction to a survival curve and back</h3>
+      <p class="note">The translation used by TITEUF, with toy values.</p>
     </div>
     <div class="tabs" role="tablist">
       <button role="tab" aria-selected="true" data-mode="r2s" type="button">RUL → survival curve</button>
@@ -244,9 +260,9 @@
     <article class="work">
       <button class="thumb" data-gallery="titeuf" type="button"><img src="assets/img/titeuf.jpg" alt="TITEUF: from RUL to survival analysis and back" loading="lazy"></button>
       <div class="work-body">
-        <h3>TITEUF: model selection for time-to-event tasks</h3>
+        <h3>On Model Selection for Time to Event Tasks</h3>
         <p class="venue"><span>KDD 2026</span><span class="badge">CORE A*</span></p>
-        <p>A unified framework to select among RUL and survival models, compared with both families of metrics.</p>
+        <p>TITEUF is a unified framework to select among RUL and survival models, compared with both families of metrics.</p>
         <p class="actions"><a href="https://doi.org/10.1145/3770855.3818915">Paper</a><a href="https://github.com/agiannoul/TITEUF">Code</a><button class="linkish" data-gallery="titeuf" type="button">Figures (5)</button></p>
       </div>
     </article>
@@ -254,7 +270,7 @@
     <article class="work">
       <button class="thumb" data-gallery="cesa" type="button"><img src="assets/img/CESA-2.png" alt="CESA: Counterfactual Explanations for Survival Analysis" loading="lazy"></button>
       <div class="work-body">
-        <h3>CESA: counterfactual explanations for survival analysis</h3>
+        <h3>CESA: Counterfactual Explanations for Survival Analysis</h3>
         <p class="venue"><span>EDBT 2027</span><span class="badge">CORE B</span></p>
         <p>Finds concise, feasible changes that would improve an individual's predicted survival, while keeping the shape of the survival curve.</p>
         <p class="actions"><a href="https://github.com/IoannisIordanis/CESA">Code</a></p>
@@ -264,19 +280,19 @@
 </section>
 
 <!-- SOFTWARE -->
-<section id="software" class="block">
+<section id="software" class="block software">
   <h2>Software</h2>
   <div class="libs">
     <article class="lib">
       <h3>PdM-Labs</h3>
-      <p>Open-source AutoML and benchmarking for predictive maintenance: anomaly detection, classification, RUL and survival analysis in one framework. Developed with Anastasios Papadopoulos and DataLab AUTh and contribution of Data&AI team of ETIS laboratory.</p>
+      <p>Open-source AutoML and benchmarking for predictive maintenance, covering anomaly detection, classification, RUL and survival analysis in one framework. Developed with Anastasios Papadopoulos and DataLab AUTh, with contributions from the Data&amp;AI team of ETIS.</p>
       <div class="install"><code>pip install pdmlabs</code><button class="copy" type="button" data-copy="pip install pdmlabs">Copy</button></div>
       <p class="actions"><a href="https://pdm-labs.github.io/PdMLabs/">Documentation</a><a href="https://github.com/PdM-Labs/PdMLabs">GitHub</a><button class="linkish" data-gallery="pdmlabs" type="button">PdM-Labs vs general AutoML</button></p>
       <p class="used">Used by Atlantis Engineering.</p>
     </article>
     <article class="lib">
       <h3>PdMContext</h3>
-      <p>Context extraction for streaming anomaly detection: maps events and signals of different rates to time series, and finds their causal relations.</p>
+      <p>Context extraction for streaming anomaly detection. It maps events and signals of different rates to time series and finds their causal relations.</p>
       <div class="install"><code>pip install PdMContext</code><button class="copy" type="button" data-copy="pip install PdMContext">Copy</button></div>
       <p class="actions"><a href="https://pd-m-context.vercel.app/">Documentation</a><a href="https://github.com/agiannoul/PdMContext">GitHub</a></p>
       <p class="used">Core engine of Atlantis Engineering’s Context Causality solution.</p>
@@ -301,7 +317,7 @@
       <h3>Path</h3>
       <ol class="timeline">
         <li><time>2025–</time><span>Postdoc, ETIS (CYU, ENSEA, CNRS), Horizon Europe project <a href="https://pandora-heu.eu/">PANDORA</a></span></li>
-        <li><time>2021–2025</time><span>PhD, Aristotle University of Thessaloniki. <a href="http://dx.doi.org/10.12681/eadd/59861">Non-supervised failure prediction in dynamic environments</a></span></li>
+        <li><time>2021–2025</time><span>PhD, Aristotle University of Thessaloniki, <a href="http://dx.doi.org/10.12681/eadd/59861">Non-supervised failure prediction in dynamic environments</a></span></li>
         <li><time>2016–2020</time><span>BSc Informatics, Aristotle University of Thessaloniki</span></li>
       </ol>
     </div>
@@ -318,12 +334,15 @@
         <li>XAIDATA Spring School on XAI, ETIS, May 2026</li>
       </ul>
       <h3>Teaching</h3>
-      <p>Machine learning at ENSEA and CY Cergy Paris Université, 2026. Databases, SQL, at Aristotle University of Thessaloniki, 2024.</p>
-    </div> 
-    <div> 
+      <p>Machine learning at ENSEA and CY Cergy Paris Université, 2026. Databases and SQL at Aristotle University of Thessaloniki, 2024.</p>
+    </div>
+    <div>
       <h3>Collective Responsibilities</h3>
-      <p>Judge, ICPC Greece Regional Programming Contest Greece, GRCPC Oct 2023 – Present</p>
-      <p><b>Reviewing</b>: VLDB 2027 Demo track, CIKM 2026, Balkan Conference in Informatics 2026, IJCNN 2025, Data Mining and Knowledge Discovery; Springer Proc. in Mathematics & Statistics. <b>External reviewer</b>: VLDB 2027, VLDB 2026 Demo track.
+      <p>Judge at the ICPC Greece Regional Programming Contest (GRCPC), since Oct 2023</p>
+      <h3>Reviewing</h3>
+      <p>VLDB 2027 Demo track, CIKM 2026, Balkan Conference in Informatics 2026, IJCNN 2025, Data Mining and Knowledge Discovery, Springer Proc. in Mathematics &amp; Statistics</p>
+      <h3>External reviewer</h3>
+      <p>VLDB 2027, VLDB 2026 Demo track</p>
     </div>
   </div>
 </section>

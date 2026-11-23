@@ -1,8 +1,8 @@
 /* ---------- helpers ---------- */
 const C = {
-  ink: '#13293D', muted: '#586A7C', rule: '#D9DFE6', signal: '#2A6FDB',
-  threshold: '#E8A317', alarm: '#D64545', context: '#2F9E6E', grey: '#9AA8B6',
-  sensors: ['#8FB3E8', '#B7C4D3', '#9BD3BA']
+  ink: '#1B1F23', muted: '#5A6470', rule: '#E1E6E5', signal: '#0E7C7B',
+  threshold: '#E3A008', alarm: '#D1495B', context: '#5C8F3E', grey: '#A3ADB5',
+  sensors: ['#8CC7C4', '#BFC8CE', '#B9D3A6']
 };
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -32,7 +32,7 @@ function path(xs, ys, sx, sy) {
   return d;
 }
 function text(parent, x, y, str, attrs = {}) {
-  const t = el('text', Object.assign({ x, y, 'font-size': 13, fill: C.muted, 'font-family': 'IBM Plex Sans, sans-serif' }, attrs), parent);
+  const t = el('text', Object.assign({ x, y, 'font-size': 13, fill: C.muted, 'font-family': 'Inter, sans-serif' }, attrs), parent);
   t.textContent = str;
   return t;
 }
@@ -106,7 +106,7 @@ function events(flags, gap = 3) { // group alarm points into alarm events
     if (data.warn > 0 && upto >= data.warn) {
       const wx = x(data.warn), wy = sy(data.score[data.warn]);
       ctx.fillStyle = C.alarm; ctx.beginPath(); ctx.arc(wx, wy, 5, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = C.ink; ctx.font = '600 13px IBM Plex Sans, sans-serif';
+      ctx.fillStyle = C.ink; ctx.font = '600 13px Inter, sans-serif';
       const label = 'Early warning';
       const tw = ctx.measureText(label).width;
       ctx.fillText(label, Math.max(pad, wx - tw - 10), wy - 10);
@@ -114,7 +114,7 @@ function events(flags, gap = 3) { // group alarm points into alarm events
         const by = h - 10;
         ctx.strokeStyle = C.ink; ctx.lineWidth = 1;
         ctx.beginPath(); ctx.moveTo(wx, by - 4); ctx.lineTo(wx, by + 2); ctx.lineTo(x(FAIL), by + 2); ctx.lineTo(x(FAIL), by - 4); ctx.stroke();
-        ctx.font = '12px IBM Plex Sans, sans-serif'; ctx.fillStyle = C.muted;
+        ctx.font = '12px Inter, sans-serif'; ctx.fillStyle = C.muted;
         const lt = 'time to act';
         ctx.fillText(lt, wx - ctx.measureText(lt).width - 8, by + 2);
       }
@@ -193,7 +193,7 @@ function events(flags, gap = 3) { // group alarm points into alarm events
     const firstInZone = flags.findIndex((f, i) => f && i >= DEG);
 
     svg.innerHTML = '';
-    el('rect', { x: sx(DEG), y: T, width: sx(N - 1) - sx(DEG), height: H - T - B, fill: '#FBE9E9' }, svg);
+    el('rect', { x: sx(DEG), y: T, width: sx(N - 1) - sx(DEG), height: H - T - B, fill: '#FBECEE' }, svg);
     text(svg, sx(DEG) + 6, T + 14, 'warning zone', { fill: C.alarm, 'font-size': 12 });
     el('line', { x1: sx(N - 1), x2: sx(N - 1), y1: T, y2: H - B, stroke: C.alarm, 'stroke-width': 3 }, svg);
     el('line', { x1: sx(DRIFT), x2: sx(DRIFT), y1: T, y2: H - B, stroke: C.grey, 'stroke-dasharray': '3 3' }, svg);
@@ -271,7 +271,7 @@ function events(flags, gap = 3) { // group alarm points into alarm events
     });
     readout.innerHTML = use
       ? `<span class="good">${raised} alarm raised, ${explained} explained by context.</span> Only the alarm before the failure remains.`
-      : `<span class="bad">${raised} alarms raised.</span> Two of them follow a speed change, not a fault.`;
+      : `<span class="bad">${raised} alarms raised.</span> Two of them are caused by a speed change and not by a fault.`;
   }
   toggle.addEventListener('change', render);
   render();
@@ -313,7 +313,7 @@ function events(flags, gap = 3) { // group alarm points into alarm events
       text(svg, sx(r) + 6, sy(1) + 12, 'point prediction', { 'font-size': 12 });
       el('path', { d: path(ts, ts.map(S), sx, sy), fill: 'none', stroke: C.signal, 'stroke-width': 2.5 }, svg);
       const a = Math.max(0, r - 10), b = Math.min(TMAX, r + 10);
-      readout.innerHTML = `Probability of surviving past day ${a}: <b>${S(a).toFixed(2)}</b>; past day ${b}: <b>${S(b).toFixed(2)}</b>.`;
+      readout.innerHTML = `Probability of surviving past day ${a} is <b>${S(a).toFixed(2)}</b>, and past day ${b} it is <b>${S(b).toFixed(2)}</b>.`;
       explain.textContent = 'A point prediction is a Dirac distribution. TITEUF approximates it with a logistic distribution, so the survival curve is 1 − its CDF, centred on the predicted RUL.';
     } else {
       const p = +pt.value;
@@ -352,8 +352,8 @@ function events(flags, gap = 3) { // group alarm points into alarm events
     ],
     thr: [['thresholding.jpg', 'Constant, self-tuning, objective-based and moving 2T thresholds for online anomaly scores.']],
     press: [
-      ['early-signs.jpg', 'Hypothesis: anomalous data act as early warnings of forthcoming failures.'],
-      ['ADlevels.png',"Adaptation of range based metrics to PdM"],
+      ['early-signs.jpg', 'Our hypothesis is that anomalous data act as early warnings of forthcoming failures.'],
+      ['ADlevels.png',"Adaptation of range-based metrics to predictive maintenance."],
       ['compare-what.jpg', 'What should the current state be compared to? Fixed reference versus a reference rebuilt after context changes.'],
       ['press.jpg', 'The Philips cold-forming press: settings such as speed change the monitored signals.']
     ],
@@ -374,14 +374,14 @@ function events(flags, gap = 3) { // group alarm points into alarm events
     ],
     titeuf: [
       ['tte-problem.jpg', 'Time-to-event prediction: RUL regression versus survival analysis.'],
-      ['censoring.jpg', 'Right censoring: a replaced machine hides when it would have failed.'],
-      ['titeuf.jpg', 'TITEUF: from RUL to survival analysis and back.'],
-      ['titeuf-automl.jpg', 'TITEUF towards AutoML: model selection across both paradigms with Bayesian optimization.'],
-      ['tte-insights.jpg', 'Experimental insights: which paradigm wins depends on censoring and temporal dependencies.']
+      ['censoring.jpg', 'With right censoring, a replaced machine hides when it would have failed.'],
+      ['titeuf.jpg', 'TITEUF translates from RUL to survival analysis and back.'],
+      ['titeuf-automl.jpg', 'TITEUF towards AutoML, with model selection across both paradigms with Bayesian optimization.'],
+      ['tte-insights.jpg', 'Which paradigm wins depends on censoring and temporal dependencies.']
     ],
     pdmlabs: [['pdmlabs.jpg', 'PdM-Labs compared with a general-purpose AutoML system.']],
-    cesa:[ ['CESA-2.png',"Counterfactial explanations for survival analysis example."] ,
-          ['CESA.jpg', 'CESA: Counterfactual Explanations for Survival Analysis using time-series data.']
+    cesa:[ ['CESA-2.png',"Example of counterfactual explanations for survival analysis."] ,
+          ['CESA.jpg', 'CESA, counterfactual explanations for survival analysis using time-series data.']
           ]
   };
   const dlg = document.getElementById('lightbox');
